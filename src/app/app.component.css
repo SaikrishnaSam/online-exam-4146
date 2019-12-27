@@ -1,0 +1,12 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover
+{
+    background:whitesmoke;
+    color:black;
+}

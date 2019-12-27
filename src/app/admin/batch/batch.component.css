@@ -1,0 +1,44 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.card-text{
+    font-size: 15px;
+}
+
+
+.space{
+    height: 250px;
+    width: 225px;
+    margin-top: 35px;
+}
+
+.btn2{
+    font-size: 10px;
+    background: rgb(6, 92, 92);
+    color: white;
+}
+
+.btn1{
+    font-size: 12px;
+    background: rgb(6, 92, 92);
+    color: white;
+    margin-top: 10px;
+}
+
+.btn3
+{
+    font-size: 10px;
+    background: rgb(6, 92, 92);
+    color: white;
+   
+}
+
+.modal
+{
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+}

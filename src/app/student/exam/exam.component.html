@@ -1,0 +1,23 @@
+ <div style="margin-top: 20px;"></div>
+    
+<div class="row" style="margin-top: 20px;">
+  <div class="col-sm-4">
+    <div class="dropdown">
+      <button type="button" class=" btn btn-dark dropdown-toggle" data-toggle="dropdown">
+        Topics
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink (click)="angular()">Angular</a>
+        <a class="dropdown-item" routerLink (click)="mongodb()">MongoDB</a>
+        <a class="dropdown-item" routerLink (click)="nodejs()">Nodejs</a>
+        <a class="dropdown-item" routerLink (click)="expressjs()">Expressjs</a>
+      </div>
+  </div>
+  </div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4"></div>
+</div>
+
+
+
+<router-outlet></router-outlet>

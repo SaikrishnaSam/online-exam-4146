@@ -1,0 +1,153 @@
+
+<div class="container-fluid">
+  <div class="text-center" style="margin-top: 20px;">
+    <button type="button"  class="btn add1 btn-success" data-toggle="modal" data-target="#studForm"> + Add Student</button>
+  </div>
+    <!-- The Modal -->
+<div class="modal" id="studForm">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color:darkgray">
+          <h4 class="modal-title" style="color: black;"><b>Registration Form</b></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form #form="ngForm" (ngSubmit)="studentReg(form.value)">
+
+          <label for="bn"><b>Batch Number</b></label>
+                <input id="bn" type="text" ngModel class="form-control" [ngModel]='presentBatchNo' name="batchNo">
+
+
+            <label for="sn"><b>Student Name</b></label>
+                <input id="sn" type="text" ngModel class="form-control" name="studentName">
+
+
+            <label for="sid"><b>Student Id</b></label>
+                <input id="sid" type="text" ngModel class="form-control" name="studentId">
+
+
+            <label for="mail"><b>Email</b></label>
+                <input id="mail" type="text" ngModel class="form-control" name="email">
+
+
+            <label for="pass"><b>Password</b></label>
+                <input id="pass" type="password" ngModel class="form-control" name="password">
+
+
+
+            <label for="mob"><b>Mobile No</b></label>
+                <input id="mob" type="text" ngModel class="form-control" name="mobile">
+
+
+            <label for="gen"><b>Gender  :</b></label>
+                <input id="gen" type="radio" ngModel name="gender" value="male">Male
+                <input id="gen" type="radio" ngModel  name="gender" value="female">Female
+
+            <br>
+            <label for="add"><b>Address</b></label>
+                <input id="add" type="text" ngModel class="form-control" name="address"> 
+                
+                
+            <br>            
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Register</button>
+            </div>
+          </form>   
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+<div class=" container-fluid font-size text-center">
+    <table class="table table-bordered">
+        <thead class="bg-dark text-light">
+
+            <th>Batch Number</th>
+            <th>Student Name</th>
+            <th>Student Id</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Modify</th>
+            <th>Delete</th>
+        </thead>
+        <tr *ngFor="let data of student">
+
+            <td>{{data.batchNo}}</td>
+            <td>{{data.studentName}}</td>
+            <td>{{data.studentId}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.address}}</td>
+            <td>
+                <button type="button" data-toggle="modal" data-target="#editForm"  (click)="editObj(data)" class="btn edit1 btn-success">Edit</button>
+            </td>
+            <td>
+                <button type="button" (click)="deleteStudent(data)" class="btn delete1 btn-danger">Delete</button>
+            </td>
+        </tr>
+      </table>
+</div>
+            <div class="modal" id="editForm">
+              <div class="modal-dialog">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header" style="background-color:darkgray">
+                    <h4 class="modal-title" style="color: black;"><b>Update Form</b></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+          
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                  <form #ref="ngForm" (ngSubmit)="editStudent(ref.value)">
+
+                    <label for="bn"><b>Batch Number</b></label>
+                    <input id="bn" type="text" ngModel class="form-control" name="BatchNo" [ngModel]="eObj.batchNo">
+
+                    
+                      <label for="sn"><b>Student Name</b></label>
+                          <input id="sn" type="text" class="form-control" name="studentName" [ngModel]="eObj.studentName">
+                      
+
+                      <label for="sid"><b>Student Id</b></label>
+                          <input id="sid" type="text" class="form-control" readonly="readonly" name="studentId" [ngModel]="eObj.studentId">
+                      
+
+                      <label for="mail"><b>Email</b></label>
+                          <input id="mail" type="text" class="form-control" name="email" [ngModel]="eObj.email">
+                      
+
+                      <label><b>Gender : </b></label>
+                          <input value="male" type="radio" name="gender"  [ngModel]="eObj.gender">Male
+                          <input value="female" type="radio" name="gender" [ngModel]="eObj.gender">Female
+                      
+                      <br>
+                      <label for="mob"><b>Mobile No</b></label>
+                          <input id="mob" type="text" class="form-control" name="mobile" [ngModel]="eObj.mobile">
+                      
+
+                      <label for="add"><b>Address</b></label>
+                          <input id="add" type="text" class="form-control" name="address" [ngModel]="eObj.address">
+                          <br>
+                          
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-success">update</button>
+                          </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+
+
+
+
+</div>

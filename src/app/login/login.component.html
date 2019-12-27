@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="jumbotron" style="margin-top: 30px;margin-bottom: 30px;color:gainsboro">
+                <div class="text-dark">
+                    <h3 style="text-align: center;"><b>Login Form</b></h3>
+                    <br>
+                    <form #form="ngForm" (ngSubmit)="loginTo(form.value)">
+                        <div>
+                            <div class="text-center">          
+                                <input type="radio" name="loginAs" value="admin" ngModel>Admin
+                                <input type="radio" name="loginAs" value="student" ngModel>Student
+                            </div>
+                        </div>
+                    <br>
+                    <label for="uid"><b><i class="fas fa-user-alt"></i>User Id</b></label>
+                    <input type="text" class="form-control" id="uid"
+                    name="userId"  ngModel #studentId="ngModel" required>
+                    <div *ngIf="studentId.invalid && (studentId.dirty || studentId.touched)">
+                        <p class="text-danger">*this field is required</p>
+                    </div>
+                    
+                    <label for="pass"><b><i class="fas fa-key"></i> Password</b></label>
+                    <input type="text" class="form-control" id="pass"
+                    name="password"  ngModel required #password="ngModel">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <p class="text-danger">*this field is required</p>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+                    </form>
+                </div>
+            </div>        
+        </div>
+        <div class="col-sm-4"></div>
+    
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    
+    
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        
+        <a class="nav-link" routerLink="home"><b>Home</b></a>
+
+      </li>
+        <li class="nav-item" *ngIf="!ls.isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.show">
+
+          <a class="nav-link" routerLink="login"> <b>Login</b> </a>
+
+        </li>
+        <li class="nav-item" *ngIf="ls.isLoggedIn()" data-toggle="collapse" data-target=".navbar-collapse.show">
+
+          <a routerLink="login" class="nav-link"> <b>Logout</b> </a>
+
+        </li>
+
+        <li class="nav-item" *ngIf="ls.isLoggedIn()">
+
+          <a (click)="navigateTo()" class="nav-link"> <b>Dashboard</b> </a>
+
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="about"><b>About</b></a>
+          
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<router-outlet></router-outlet>
