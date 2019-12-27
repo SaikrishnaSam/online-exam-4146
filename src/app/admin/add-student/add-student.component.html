@@ -63,36 +63,36 @@
   </div>
   <br>
 <div class=" container-fluid font-size text-center">
-    <table class="table table-bordered">
-        <thead class="bg-dark text-light">
+    <table class="table table-responsive-sm table-bordered">
+      <thead class="bg-dark text-light">
 
-            <th>Batch Number</th>
-            <th>Student Name</th>
-            <th>Student Id</th>
-            <th>Email</th>
-            <th>Mobile No</th>
-            <th>Gender</th>
-            <th>Address</th>
-            <th>Modify</th>
-            <th>Delete</th>
-        </thead>
-        <tr *ngFor="let data of student">
+          <th>Batch Number</th>
+          <th>Student Name</th>
+          <th>Student Id</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Modify</th>
+          <th>Delete</th>
+      </thead>
+      <tr *ngFor="let data of student">
 
-            <td>{{data.batchNo}}</td>
-            <td>{{data.studentName}}</td>
-            <td>{{data.studentId}}</td>
-            <td>{{data.email}}</td>
-            <td>{{data.mobile}}</td>
-            <td>{{data.gender}}</td>
-            <td>{{data.address}}</td>
-            <td>
-                <button type="button" data-toggle="modal" data-target="#editForm"  (click)="editObj(data)" class="btn edit1 btn-success">Edit</button>
-            </td>
-            <td>
-                <button type="button" (click)="deleteStudent(data)" class="btn delete1 btn-danger">Delete</button>
-            </td>
-        </tr>
-      </table>
+          <td>{{data.batchNo}}</td>
+          <td>{{data.studentName}}</td>
+          <td>{{data.studentId}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.mobile}}</td>
+          <td>{{data.gender}}</td>
+          <td>{{data.address}}</td>
+          <td>
+              <button type="button" data-toggle="modal" data-target="#editForm"  (click)="editObj(data)" class="btn edit1 btn-success">Edit</button>
+          </td>
+          <td>
+              <button type="button" (click)="deleteStudent(data)" class="btn delete1 btn-danger">Delete</button>
+          </td>
+      </tr>
+    </table>
 </div>
             <div class="modal" id="editForm">
               <div class="modal-dialog">
